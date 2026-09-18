@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050000">
-<title>JekSetting • INJEKCIT TEAM SETTING</title>
+<meta name="theme-color" content="#050505">
+<meta name="description" content="JekSetting - Injekcit Team Setting">
+
+<title>JekSetting — INJEKCIT TEAM SETTING</title>
 
 <style>
 *{
@@ -19,724 +21,1126 @@ html{
 }
 
 body{
-    min-height:100vh;
-    color:#fff;
     background:
-        radial-gradient(circle at 50% -10%,rgba(255,0,0,.30),transparent 35%),
-        radial-gradient(circle at 0% 50%,rgba(150,0,0,.12),transparent 30%),
-        #020202;
+        radial-gradient(circle at 50% -10%,#410000 0%,#160000 25%,#070707 60%);
+    color:#fff;
+    min-height:100vh;
     overflow-x:hidden;
 }
 
-/* SCANLINE */
+/* BACKGROUND */
 body::before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
-    z-index:999;
-    opacity:.18;
-    background:repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 3px,
-        rgba(255,0,0,.035) 4px
-    );
+    opacity:.25;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 70px,
+            rgba(255,0,0,.07) 71px,
+            transparent 73px
+        );
 }
 
-/* RED GLOW */
-body::after{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
-    background:#f00;
-    filter:blur(180px);
-    opacity:.07;
-    pointer-events:none;
-}
+/* ================= HEADER ================= */
 
-/* HEADER */
-header{
-    padding:30px 18px 22px;
+.header{
+    position:relative;
     text-align:center;
-    border-bottom:1px solid rgba(255,0,0,.22);
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(12px);
+    padding:35px 15px 25px;
 }
 
 .logo{
-    font-size:29px;
-    font-weight:1000;
-    letter-spacing:4px;
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid #ff2020;
+    border-radius:10px;
+    background:linear-gradient(135deg,#180000,#080808);
     color:#fff;
-    text-shadow:
-        0 0 5px #ff0000,
-        0 0 15px #ff0000,
-        0 0 35px rgba(255,0,0,.8);
+    font-size:15px;
+    font-weight:900;
+    letter-spacing:3px;
+    box-shadow:
+        0 0 15px rgba(255,0,0,.4),
+        inset 0 0 15px rgba(255,0,0,.08);
 }
 
 .logo span{
-    color:#ff1111;
+    color:#ff2020;
 }
 
-.subtitle{
-    margin-top:8px;
-    color:#777;
-    font-size:10px;
-    letter-spacing:4px;
-}
-
-/* STATUS */
-.status{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    margin-top:18px;
-    padding:8px 15px;
-    border:1px solid rgba(255,0,0,.6);
-    border-radius:30px;
-    color:#ff3b3b;
-    font-size:10px;
-    letter-spacing:1px;
-    background:rgba(255,0,0,.07);
-    box-shadow:0 0 20px rgba(255,0,0,.15);
-}
-
-.dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#ff0000;
-    box-shadow:0 0 12px #f00;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:.25;
-        transform:scale(.7);
-    }
-}
-
-/* HERO */
-.hero{
-    position:relative;
-    margin:22px 14px;
-    padding:25px 20px;
-    border-radius:22px;
-    border:1px solid rgba(255,0,0,.38);
-    overflow:hidden;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,0,0,.15),
-            rgba(15,0,0,.85) 55%,
-            rgba(0,0,0,.98)
-        );
-    box-shadow:
-        0 0 30px rgba(255,0,0,.10),
-        inset 0 0 30px rgba(255,0,0,.05);
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    top:-100px;
-    right:-100px;
-    width:230px;
-    height:230px;
-    border-radius:50%;
-    background:#f00;
-    filter:blur(90px);
-    opacity:.13;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    left:-100%;
-    top:0;
-    width:50%;
-    height:100%;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.06),
-        transparent
-    );
-    transform:skewX(-20deg);
-    animation:sweep 5s infinite;
-}
-
-@keyframes sweep{
-    0%,55%{left:-100%}
-    75%,100%{left:150%}
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-
-.mini-title{
-    color:#ff2424;
-    font-size:10px;
-    font-weight:bold;
-    letter-spacing:3px;
-    margin-bottom:8px;
-}
-
-.hero h1{
-    font-size:28px;
-    line-height:1.1;
+.header h1{
+    margin-top:20px;
+    font-size:clamp(45px,12vw,82px);
+    line-height:.9;
     font-weight:1000;
-    text-shadow:0 0 18px rgba(255,0,0,.55);
+    font-style:italic;
+    letter-spacing:-4px;
+    color:#fff;
+    text-shadow:
+        3px 3px 0 #7d0000,
+        0 0 15px #ff0000,
+        0 0 35px rgba(255,0,0,.5);
 }
 
-.hero h1 span{
+.header h1 b{
     color:#ff1717;
 }
 
-.hero p{
-    margin-top:11px;
-    color:#999;
-    font-size:12px;
-    line-height:1.6;
+.subtitle{
+    margin-top:15px;
+    font-size:11px;
+    letter-spacing:5px;
+    color:#bbb;
 }
 
-.features{
+.header-line{
+    width:190px;
+    height:3px;
+    margin:20px auto 0;
+    background:#ff1717;
+    box-shadow:0 0 15px #f00;
+}
+
+/* ================= BADGES ================= */
+
+.badges{
+    width:min(1100px,94%);
+    margin:5px auto 30px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.badge{
+    min-height:82px;
     display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-    margin-top:18px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:1px solid #ff2424;
+    border-radius:12px;
+    background:
+        linear-gradient(145deg,#1d0000,#080808);
+    box-shadow:
+        0 0 14px rgba(255,0,0,.18),
+        inset 0 0 15px rgba(255,0,0,.05);
 }
 
-.feature{
-    padding:7px 10px;
-    border:1px solid rgba(255,0,0,.3);
-    border-radius:7px;
-    background:rgba(255,0,0,.06);
-    color:#ccc;
-    font-size:9px;
+.badge-icon{
+    color:#ff2929;
+    font-size:25px;
+    margin-bottom:5px;
+    text-shadow:0 0 12px #f00;
+}
+
+.badge strong{
+    font-size:11px;
     letter-spacing:.5px;
 }
 
-/* SECTION */
-section{
-    padding:0 14px 8px;
+.badge small{
+    margin-top:4px;
+    color:#888;
+    font-size:8px;
 }
 
+/* ================= CONTAINER ================= */
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+.section{
+    margin-bottom:28px;
+}
+
+/* ================= TITLE ================= */
+
 .section-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:25px 2px 14px;
+    padding:16px 20px;
+    margin-bottom:13px;
+    border:1px solid #ff2222;
+    border-radius:13px;
+    background:
+        linear-gradient(105deg,#260000,#090909 55%,#180000);
+    box-shadow:
+        0 0 18px rgba(255,0,0,.2),
+        inset 0 0 20px rgba(255,0,0,.06);
 }
 
 .section-title h2{
-    font-size:15px;
-    white-space:nowrap;
+    font-size:24px;
+    font-style:italic;
     letter-spacing:1px;
-    text-shadow:0 0 8px rgba(255,0,0,.35);
 }
 
-.section-title h2::first-letter{
-    color:#f00;
-}
-
-.line{
-    height:1px;
-    flex:1;
-    background:linear-gradient(
-        90deg,
-        rgba(255,0,0,.8),
-        transparent
-    );
-}
-
-/* PRODUCT CARD */
-.product{
-    position:relative;
-    margin-bottom:13px;
-    padding:19px;
-    border-radius:17px;
-    border:1px solid rgba(255,0,0,.24);
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,0,0,.10),
-            rgba(8,8,8,.98) 60%
-        );
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.5),
-        inset 0 0 25px rgba(255,0,0,.025);
-    overflow:hidden;
-    transition:.25s ease;
-}
-
-.product::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:3px;
-    background:#ff0000;
-    box-shadow:0 0 14px #ff0000;
-}
-
-.product::after{
-    content:"";
-    position:absolute;
-    right:-60px;
-    bottom:-70px;
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    background:#f00;
-    filter:blur(70px);
-    opacity:.06;
-}
-
-.product:hover{
-    transform:translateY(-4px);
-    border-color:#ff2222;
-    box-shadow:
-        0 12px 35px rgba(255,0,0,.16),
-        inset 0 0 25px rgba(255,0,0,.05);
-}
-
-/* DISCOUNT */
-.discount{
-    position:absolute;
-    right:12px;
-    top:12px;
-    padding:5px 8px;
-    border-radius:6px;
-    background:linear-gradient(135deg,#ff0000,#9d0000);
-    color:#fff;
-    font-size:8px;
-    font-weight:900;
-    letter-spacing:.5px;
-    box-shadow:
-        0 0 10px rgba(255,0,0,.5);
-}
-
-.product-name{
-    padding-right:95px;
-    color:#fff;
-    font-size:15px;
-    font-weight:900;
-    letter-spacing:.3px;
-}
-
-.product-desc{
-    margin-top:6px;
-    margin-bottom:13px;
-    color:#666;
+.section-title p{
+    margin-top:5px;
+    color:#999;
     font-size:10px;
+    letter-spacing:1px;
 }
 
-.price-box{
-    display:flex;
-    align-items:end;
-    gap:9px;
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    gap:11px;
 }
 
-.old-price{
-    color:#555;
-    font-size:11px;
-    text-decoration:line-through;
-}
-
-.new-price{
-    color:#ff2525;
-    font-size:22px;
-    font-weight:1000;
-    line-height:1;
-    text-shadow:
-        0 0 8px rgba(255,0,0,.45);
-}
-
-.buy{
+.product{
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:7px;
-    margin-top:14px;
-    padding:12px;
-    border-radius:10px;
-    color:#fff;
-    text-decoration:none;
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:1px;
+    gap:15px;
+    padding:15px;
+    border:1px solid #ff2525;
+    border-radius:14px;
     background:
-        linear-gradient(90deg,#850000,#ef0000,#850000);
-    background-size:200% 100%;
-    box-shadow:0 0 15px rgba(255,0,0,.18);
+        linear-gradient(110deg,#170000,#080808 50%,#130000);
+    box-shadow:
+        0 0 13px rgba(255,0,0,.14),
+        inset 0 0 18px rgba(255,0,0,.04);
     transition:.25s;
 }
 
-.buy:hover{
-    background-position:100% 0;
-    box-shadow:0 0 25px rgba(255,0,0,.5);
-    transform:scale(1.015);
+.product:hover{
+    transform:translateY(-2px);
+    border-color:#ff5555;
+    box-shadow:
+        0 0 25px rgba(255,0,0,.35),
+        inset 0 0 20px rgba(255,0,0,.08);
 }
 
-/* INFO */
-.info{
-    position:relative;
-    margin:20px 14px 95px;
-    padding:19px;
-    border-radius:17px;
-    border:1px solid rgba(255,0,0,.22);
-    background:linear-gradient(
-        135deg,
-        rgba(255,0,0,.07),
-        rgba(8,8,8,.95)
-    );
+.product-icon{
+    width:55px;
+    height:55px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #ff2424;
+    border-radius:13px;
+    background:#0b0000;
+    color:#ff2525;
+    font-size:24px;
+    box-shadow:0 0 12px rgba(255,0,0,.22);
 }
 
-.info-title{
-    color:#ff2424;
-    font-size:12px;
-    font-weight:bold;
+.product-info{
+    flex:1;
+    min-width:0;
+}
+
+.product-info h3{
+    font-size:17px;
+    font-style:italic;
+}
+
+.product-info p{
+    margin-top:5px;
+    color:#999;
+    font-size:9px;
+}
+
+.permanent{
+    display:inline-block;
+    margin-top:7px;
+    padding:4px 11px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#ff1616,#a90000);
+    color:#fff;
+    font-size:8px;
+    font-weight:900;
     letter-spacing:1px;
-    margin-bottom:9px;
+    box-shadow:0 0 9px rgba(255,0,0,.25);
 }
 
-.info p{
+.price{
+    min-width:105px;
+    text-align:right;
+}
+
+.old{
+    color:#707070;
+    text-decoration:line-through;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.new{
+    color:#fff;
+    font-size:28px;
+    font-weight:1000;
+    font-style:italic;
+    text-shadow:0 0 12px rgba(255,0,0,.7);
+}
+
+/* ================= DRAG SHOT ================= */
+
+.drag-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:9px;
+}
+
+.drag{
+    padding:17px 7px;
+    text-align:center;
+    border:1px solid #ff2424;
+    border-radius:13px;
+    background:
+        linear-gradient(145deg,#180000,#080808);
+    box-shadow:
+        0 0 12px rgba(255,0,0,.15),
+        inset 0 0 12px rgba(255,0,0,.04);
+    transition:.25s;
+}
+
+.drag:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 22px rgba(255,0,0,.3);
+}
+
+.drag-icon{
+    color:#ff2424;
+    font-size:23px;
+    margin-bottom:8px;
+    text-shadow:0 0 10px #f00;
+}
+
+.drag h3{
+    font-size:12px;
+}
+
+.drag .old{
+    margin-top:8px;
+    font-size:11px;
+}
+
+.drag .new{
+    font-size:25px;
+}
+
+.drag .permanent{
+    margin-top:8px;
+}
+
+/* ================= INFO ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.info-card{
+    padding:20px;
+    border:1px solid #ff2222;
+    border-radius:14px;
+    background:
+        linear-gradient(145deg,#180000,#080808);
+    box-shadow:
+        0 0 15px rgba(255,0,0,.14);
+}
+
+.info-card h3{
+    color:#ff2929;
+    font-size:16px;
+    margin-bottom:13px;
+}
+
+.info-list{
+    list-style:none;
+}
+
+.info-list li{
+    padding:9px 0;
+    border-bottom:1px solid rgba(255,0,0,.12);
+    color:#ccc;
+    font-size:11px;
+}
+
+.info-list li:last-child{
+    border-bottom:0;
+}
+
+.info-list li::before{
+    content:"✓";
+    color:#ff2424;
+    font-weight:bold;
+    margin-right:9px;
+}
+
+/* ================= PAYMENT ================= */
+
+.payment{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.pay{
+    padding:9px 13px;
+    border:1px solid #333;
+    border-radius:8px;
+    background:#090909;
+    color:#ccc;
+    font-size:10px;
+}
+
+/* ================= ORDER ================= */
+
+.order{
+    margin:32px 0;
+    padding:25px 18px;
+    text-align:center;
+    border:1px solid #ff2424;
+    border-radius:16px;
+    background:
+        radial-gradient(circle at center,#350000,#080808 65%);
+    box-shadow:
+        0 0 25px rgba(255,0,0,.25),
+        inset 0 0 25px rgba(255,0,0,.07);
+}
+
+.order h2{
+    font-size:30px;
+    font-style:italic;
+    text-shadow:0 0 15px #f00;
+}
+
+.order p{
+    margin:9px auto 19px;
+    max-width:600px;
+    color:#999;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.order-btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:10px;
+    background:
+        linear-gradient(135deg,#ff3030,#a90000);
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:1000;
+    letter-spacing:1px;
+    box-shadow:
+        0 0 20px rgba(255,0,0,.4);
+    transition:.25s;
+}
+
+.order-btn:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 30px rgba(255,0,0,.65);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:25px 15px 100px;
+    text-align:center;
     color:#666;
     font-size:10px;
     line-height:1.8;
 }
 
-/* FOOTER */
-footer{
+footer strong{
+    color:#ef2222;
+}
+
+/* ================= NAV ================= */
+
+.nav{
     position:fixed;
-    z-index:1000;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:13px 10px;
+    z-index:100;
+    left:50%;
+    bottom:12px;
+    transform:translateX(-50%);
+    width:min(500px,92%);
+    display:flex;
+    justify-content:space-around;
+    padding:9px;
+    border:1px solid #ff2525;
+    border-radius:18px;
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(12px);
+    box-shadow:0 0 25px rgba(255,0,0,.25);
+}
+
+.nav a{
+    min-width:60px;
+    color:#888;
+    text-decoration:none;
     text-align:center;
-    background:rgba(2,2,2,.94);
-    backdrop-filter:blur(15px);
-    border-top:1px solid rgba(255,0,0,.25);
-    color:#555;
     font-size:9px;
-    letter-spacing:1.5px;
+    transition:.2s;
 }
 
-footer span{
-    color:#e00000;
+.nav a span{
+    display:block;
+    margin-bottom:3px;
+    font-size:18px;
 }
 
-/* MOBILE */
-@media(max-width:380px){
-    .logo{
-        font-size:24px;
+.nav a:hover{
+    color:#ff2424;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .badges{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .hero h1{
-        font-size:24px;
+    .badge:last-child{
+        grid-column:1/-1;
+    }
+
+    .header h1{
+        font-size:46px;
+    }
+
+    .subtitle{
+        font-size:9px;
+        letter-spacing:3px;
     }
 
     .section-title h2{
+        font-size:20px;
+    }
+
+    .product{
+        padding:12px;
+        gap:10px;
+    }
+
+    .product-icon{
+        width:46px;
+        height:46px;
+        font-size:20px;
+    }
+
+    .product-info h3{
         font-size:13px;
+    }
+
+    .product-info p{
+        font-size:8px;
+    }
+
+    .price{
+        min-width:70px;
+    }
+
+    .price .old{
+        font-size:10px;
+    }
+
+    .price .new{
+        font-size:22px;
+    }
+
+    .drag-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .drag:last-child{
+        grid-column:1/-1;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:400px){
+
+    .header h1{
+        font-size:40px;
+    }
+
+    .product-info h3{
+        font-size:11px;
+    }
+
+    .product-info p{
+        font-size:7px;
+    }
+
+    .price{
+        min-width:62px;
+    }
+
+    .price .new{
+        font-size:19px;
+    }
+
+    .permanent{
+        font-size:7px;
+        padding:3px 8px;
     }
 }
 </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">✦ <span>JEK</span>SETTING ✦</div>
-    <div class="subtitle">INJEKCIT TEAM SETTING</div>
+<!-- ================= HEADER ================= -->
 
-    <div class="status">
-        <span class="dot"></span>
-        SYSTEM ONLINE
+<header class="header">
+
+    <div class="logo">
+        NEW UPDATE <span>OB55</span>
     </div>
+
+    <h1>
+        @Jek<b>Settings</b>
+    </h1>
+
+    <div class="subtitle">
+        INJEKCIT • TEAM • SETTING
+    </div>
+
+    <div class="header-line"></div>
+
 </header>
 
-<!-- HERO -->
-<div class="hero">
-    <div class="hero-content">
 
-        <div class="mini-title">PREMIUM • EXCLUSIVE • OB55</div>
+<!-- ================= BADGES ================= -->
 
-        <h1>
-            JEKSETTING<br>
-            <span>OB55</span>
-        </h1>
+<section class="badges">
+
+    <div class="badge">
+        <div class="badge-icon">🛡</div>
+        <strong>100% AMAN</strong>
+        <small>KLAIM PENJUAL</small>
+    </div>
+
+    <div class="badge">
+        <div class="badge-icon">⚡</div>
+        <strong>FAST PROCESS</strong>
+        <small>PROSES CEPAT</small>
+    </div>
+
+    <div class="badge">
+        <div class="badge-icon">⚙</div>
+        <strong>STABIL</strong>
+        <small>SETTING RAPI</small>
+    </div>
+
+    <div class="badge">
+        <div class="badge-icon">🎧</div>
+        <strong>SUPPORT</strong>
+        <small>SIAP BANTU</small>
+    </div>
+
+    <div class="badge">
+        <div class="badge-icon">◆</div>
+        <strong>HARGA TERBAIK</strong>
+        <small>HARGA BERSAHABAT</small>
+    </div>
+
+</section>
+
+
+<main class="container">
+
+<!-- ================= APP ================= -->
+
+<section class="section" id="produk">
+
+    <div class="section-title">
+        <h2>⚡ APP INJEKCIT SETING V2.0</h2>
+        <p>PREMIUM - MEMPERMUDAH HEADSHOT</p>
+    </div>
+
+
+    <div class="products">
+
+        <!-- BASIC -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                🎯
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    APP INJEKCIT BASIC
+                </h3>
+
+                <p>
+                    STABIL • AMAN • SIMPLE
+                </p>
+
+                <span class="permanent">
+                    PERMANEN
+                </span>
+
+            </div>
+
+            <div class="price">
+                <div class="old">
+                    20K
+                </div>
+
+                <div class="new">
+                    15K
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- MEDIUM -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                📱
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    APP INJEKCIT MEDIUM
+                </h3>
+
+                <p>
+                    FITUR LENGKAP • PERFORMA MAX
+                </p>
+
+                <span class="permanent">
+                    PERMANEN
+                </span>
+
+            </div>
+
+            <div class="price">
+                <div class="old">
+                    50K
+                </div>
+
+                <div class="new">
+                    35K
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- EXTREME -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                🔥
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    APP INJEKCIT EXTREME
+                </h3>
+
+                <p>
+                    AKURASI TINGGI • NO LAG
+                </p>
+
+                <span class="permanent">
+                    PERMANEN
+                </span>
+
+            </div>
+
+            <div class="price">
+                <div class="old">
+                    90K
+                </div>
+
+                <div class="new">
+                    60K
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- PRIME -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                👑
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    APP INJEKCIT PRIME
+                </h3>
+
+                <p>
+                    STABIL • PREMIUM • FULL FITUR
+                </p>
+
+                <span class="permanent">
+                    PERMANEN
+                </span>
+
+            </div>
+
+            <div class="price">
+                <div class="old">
+                    150K
+                </div>
+
+                <div class="new">
+                    100K
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DRAG SHOT ================= -->
+
+<section class="section" id="drag">
+
+    <div class="section-title">
+
+        <h2>
+            🎯 FILE DRAG SHOT VIP V2.0
+        </h2>
 
         <p>
-            Koleksi premium JekSetting dengan tampilan
-            eksklusif dan pengalaman yang lebih nyaman.
+            PAKET PREMIUM • Semakin Tinggi Harganya, Semakin Tinggi Persenannya!
         </p>
 
-        <div class="features">
-            <div class="feature">⚡ STABLE</div>
-            <div class="feature">🔥 FAST</div>
-            <div class="feature">☠ PREMIUM</div>
-            <div class="feature">◆ OPTIMIZED</div>
-            <div class="feature">✓ ANDROID</div>
-        </div>
-
-    </div>
-</div>
-
-<!-- DRAG SHOT -->
-<section>
-
-    <div class="section-title">
-        <h2>☠ FILE DRAG SHOT VVIP V2</h2>
-        <div class="line"></div>
     </div>
 
-    <!-- PRODUCT 1 -->
-    <div class="product">
-        <div class="discount">-37% DISCOUNT</div>
 
-        <div class="product-name">
-            DRAG SHOT 25%
+    <div class="drag-grid">
+
+        <!-- 25 -->
+
+        <div class="drag">
+
+            <div class="drag-icon">
+                ◎
+            </div>
+
+            <h3>
+                DRAG SHOT 25%
+            </h3>
+
+            <div class="old">
+                
+            </div>
+
+            <div class="new">
+                5K
+            </div>
+
+            <span class="permanent">
+                PERMANEN
+            </span>
+
         </div>
 
-        <div class="product-desc">
-            Version 2 • OB55 • Premium
+
+        <!-- 50 -->
+
+        <div class="drag">
+
+            <div class="drag-icon">
+                ◎
+            </div>
+
+            <h3>
+                DRAG SHOT 50%
+            </h3>
+
+            <div class="old">
+                
+            </div>
+
+            <div class="new">
+                15K
+            </div>
+
+            <span class="permanent">
+                PERMANEN
+            </span>
+
         </div>
 
-        <div class="price-box">
-            <div class="old-price">8K</div>
-            <div class="new-price">5K</div>
+
+        <!-- 70 -->
+
+        <div class="drag">
+
+            <div class="drag-icon">
+                ◎
+            </div>
+
+            <h3>
+                DRAG SHOT 70%
+            </h3>
+
+            <div class="old">
+                
+            </div>
+
+            <div class="new">
+                25K
+            </div>
+
+            <span class="permanent">
+                PERMANEN
+            </span>
+
         </div>
 
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20DRAG%20SHOT%2025%%20-%205K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
 
-    <!-- PRODUCT 2 -->
-    <div class="product">
-        <div class="discount">-25% DISCOUNT</div>
+        <!-- 80 -->
 
-        <div class="product-name">
-            DRAG SHOT 50%
+        <div class="drag">
+
+            <div class="drag-icon">
+                ◎
+            </div>
+
+            <h3>
+                DRAG SHOT 80%
+            </h3>
+
+            <div class="old">
+                
+            </div>
+
+            <div class="new">
+                40K
+            </div>
+
+            <span class="permanent">
+                PERMANEN
+            </span>
+
         </div>
 
-        <div class="product-desc">
-            Version 2 • OB55 • Premium
+
+        <!-- 90 -->
+
+        <div class="drag">
+
+            <div class="drag-icon">
+                ◎
+            </div>
+
+            <h3>
+                DRAG SHOT 90%
+            </h3>
+
+            <div class="old">
+                
+            </div>
+
+            <div class="new">
+                60K
+            </div>
+
+            <span class="permanent">
+                PERMANEN
+            </span>
+
         </div>
 
-        <div class="price-box">
-            <div class="old-price">20K</div>
-            <div class="new-price">15K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20DRAG%20SHOT%2050%%20-%2015K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="product">
-        <div class="discount">-29% DISCOUNT</div>
-
-        <div class="product-name">
-            DRAG SHOT 70%
-        </div>
-
-        <div class="product-desc">
-            Version 2 • OB55 • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">40K</div>
-            <div class="new-price">30K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20DRAG%20SHOT%2070%%20-%2025K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- PRODUCT 4 -->
-    <div class="product">
-        <div class="discount">-11% DISCOUNT</div>
-
-        <div class="product-name">
-            DRAG SHOT 80%
-        </div>
-
-        <div class="product-desc">
-            Version 2 • OB55 • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">65K</div>
-            <div class="new-price">50K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20DRAG%20SHOT%2080%%20-%2040K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- PRODUCT 5 -->
-    <div class="product">
-        <div class="discount">-21% DISCOUNT</div>
-
-        <div class="product-name">
-            DRAG SHOT 90%
-        </div>
-
-        <div class="product-desc">
-            Version 2 • OB55 • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">100K</div>
-            <div class="new-price">80K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20DRAG%20SHOT%2090%%20-%2055K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-</section>
-
-<!-- INJEKCIT -->
-<section>
-
-    <div class="section-title">
-        <h2>☠ APP INJEKCIT VERSION 2</h2>
-        <div class="line"></div>
-    </div>
-
-    <!-- BASIC -->
-    <div class="product">
-        <div class="discount">-25% DISCOUNT</div>
-
-        <div class="product-name">
-            APP INJEKCIT BASIC V2
-        </div>
-
-        <div class="product-desc">
-            • Permanen • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">20K</div>
-            <div class="new-price">15K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20APP%20INJEKCIT%20BASIC%20V2%20-%2015K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- MEDIUM -->
-    <div class="product">
-        <div class="discount">-30% DISCOUNT</div>
-
-        <div class="product-name">
-            APP INJEKCIT MEDIUM V2
-        </div>
-
-        <div class="product-desc">
-            • Permanen • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">50K</div>
-            <div class="new-price">35K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20APP%20INJEKCIT%20MEDIUM%20V2%20-%2035K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- EXTREME -->
-    <div class="product">
-        <div class="discount">-33% DISCOUNT</div>
-
-        <div class="product-name">
-            APP INJEKCIT EXTREME V2
-        </div>
-
-        <div class="product-desc">
-            • Permanen • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">90K</div>
-            <div class="new-price">60K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20APP%20INJEKCIT%20EXTREME%20V2%20-%2060K">
-           💬 BELI SEKARANG
-        </a>
-    </div>
-
-    <!-- PRIME -->
-    <div class="product">
-        <div class="discount">-33% DISCOUNT</div>
-
-        <div class="product-name">
-            APP INJEKCIT PRIME V2
-        </div>
-
-        <div class="product-desc">
-            • Permanen • Premium
-        </div>
-
-        <div class="price-box">
-            <div class="old-price">150K</div>
-            <div class="new-price">100K</div>
-        </div>
-
-        <a class="buy"
-           href="https://wa.me/6285794072560?text=Halo%20JekSetting,%20saya%20mau%20beli%20APP%20INJEKCIT%20PRIME%20V2%20-%20100K">
-           💬 BELI SEKARANG
-        </a>
     </div>
 
 </section>
 
-<!-- INFO -->
-<div class="info">
-    <div class="info-title">
-        ⚠ INFORMATION
+
+<!-- ================= INFO ================= -->
+
+<section class="info-grid">
+
+
+    <div class="info-card">
+
+        <h3>
+            🛡 KEUNTUNGAN APP INJEKCIT SETING V2.0
+        </h3>
+
+        <ul class="info-list">
+
+                      <li>
+                Drag Super Ringan Ke Kepala
+                      </li>
+          
+            <li>
+                Membantu Mendapatkan Aim Yang Lebih Konsisten
+            </li>
+
+            <li>
+                Respons Kontrol Terasa Lebih Sesuai Konfigurasi
+            </li>
+          
+            <li>
+                Aim Lebih Stabil Dan On Point
+            </li>
+
+            <li>
+                Menambahkan Rate Headshot
+            </li>
+
+            <li>
+                Membantu Mempermudah Kontrol Saat Melakukan Drag
+            </li>
+
+            <li>
+                Membantu Membuat Gerakan Drag Terasa Lebih Licin Dan Responsif
+            </li>
+
+            <li>
+                Cocok Untuk Isian/Laga aman anti banned
+            </li>
+
+        </ul>
+
     </div>
+
+
+    <div class="info-card">
+      
+            
+
+        <h3>
+            🛡 KEUNTUNGAN DRAG SHOT VVIP V2.0
+        </h3>
+
+        <ul class="info-list">
+
+            <li>
+                Aim Lebih Stabil Dan On Point
+            </li>
+
+            <li>
+                Menambahkan Rate Headshot
+            </li>
+
+            <li>
+                Drag Super Ringan Ke Kepala
+            </li>
+
+            <li>
+                Tergantung Persentase Yang Kamu Beli
+            </li>
+
+            <li>
+                Cocok Untuk Isian/Laga aman anti banned
+            </li>
+
+        </ul>
+
+            </>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section class="order">
+
+    <h2>
+        ORDER SEKARANG!
+    </h2>
 
     <p>
-        Semua harga yang ditampilkan merupakan harga promo.
-        Produk tersedia selama masih tersedia. Untuk pembelian
-        dan informasi lebih lanjut, silakan hubungi admin
-        melalui WhatsApp.
+        Pilih produk yang kamu inginkan,
+        kemudian hubungi JekSetting melalui WhatsApp
+        untuk melakukan pemesanan.
     </p>
-</div>
+
+    <a
+        class="order-btn"
+        href="https://wa.me/6285794072560?text=Halo%20JekSetting%2C%20saya%20mau%20order"
+        target="_blank"
+        rel="noopener"
+    >
+        💬 ORDER VIA WHATSAPP
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    ☠ <span>JEKSETTING</span> © 2026 • INJEKCIT TEAM SETTING ☠
+
+    <strong>JEK SETTING</strong>
+
+    <br>
+
+    INJEKCIT • TEAM • SETTING
+
+    <br><br>
+
+    ©JekSetting 2026. All Rights Reserved.
+
 </footer>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="nav">
+
+    <a href="#">
+        <span>⌂</span>
+        HOME
+    </a>
+
+    <a href="#produk">
+        <span>▣</span>
+        PRODUK
+    </a>
+
+    <a href="#drag">
+        <span>◎</span>
+        DRAG SHOT
+    </a>
+
+    <a href="#produk">
+        <span>⚡</span>
+        HARGA
+    </a>
+
+</nav>
+
 
 </body>
 </html>
